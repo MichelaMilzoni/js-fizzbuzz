@@ -10,9 +10,10 @@ const multipleOf5 = `Buzz`
 const multipleOf3And5 = `FizzBuzz`
 
 // - output
-const outputText = "Sei arrivato a 100!"
+let outputText;
 
 // SVOLGIMENTO
+function primoSvolgimento() {
 for (let i = 1; i <= 100; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
         console.log(multipleOf3And5);  // verifico che il numero sia multiplo di 3 e di 5, se vero stampo 'FizzBuzz'
@@ -26,9 +27,61 @@ for (let i = 1; i <= 100; i++) {
 
     // quando i arriva a 100, stampo outputText
     if (i === 100) {
-        console.log(outputText)
+        outputText ="Sei arrivato a 100!"
+        console.log(outputText) 
     }
+}
+
+// Separatore
+console.log("--------- Fine primo svolgimento ---------");
 }
 
 
 
+// svolgimento 2
+
+function secondoSvolgimento() {
+for (let i = 1; i <= 100; i++) { // inizialmente i = 1, ripeto il for aggiungendo 1 al valore i fino a quando i è <=100 
+    let outputText = ""; //assegno a output una stringa vuota
+
+    if (i % 3 === 0) { //se il valore i diviso per 3 dà resto 0  
+        outputText += multipleOf3; // aggiungi "Fizz"
+    }
+    if (i % 5 === 0) { //se il valore i diviso per 5 dà resto 0  
+        outputText += multipleOf5; //aggiungi "Buzz"
+    }
+
+    console.log(outputText || i); // se la stringa resta vuota, i non è multiplo nè di 3 nè di 5
+    // ||="OR logico" valuta due espressioni restitendo il primo valore VERO che incontra, 
+    // se nessuna espressione è vera, rstituisce l'ultimo valore
+    // * in questo caso, restituisce sia Fizz che Buzz quando il numero è multiplo sia di 3 che di 5
+}
+outputText ="Sei arrivato a 100!"
+console.log(outputText) 
+
+// Separatore
+console.log("--------- Fine secondo svolgimento ---------");
+}
+
+// svolgimento 3
+function terzoSvolgimento() {
+    for (let i = 1; i <= 100; i++) {
+        const outputText = (i % 3 === 0 && i % 5 === 0) ? multipleOf3And5 :
+                        (i % 3 === 0) ? multipleOf3 :
+                        (i % 5 === 0) ? multipleOf5 :
+                        i;
+
+    console.log(outputText) 
+}
+outputText ="Sei arrivato a 100!"
+console.log(outputText)
+
+// Separatore
+console.log("--------- Fine terzo svolgimento ---------");
+}
+
+
+// chiamata delle funzioni 
+primoSvolgimento();
+secondoSvolgimento();
+terzoSvolgimento();
