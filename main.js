@@ -1,4 +1,4 @@
-// Scrivi un programma che stampi i numeri da 1 a 100,
+// Scrivi un programma che stampi i numeri da 1 a 100
 
 // RACCOLTA DATI
 
@@ -9,16 +9,26 @@ const multipleOf5 = `Buzz`
 // - per i multipli di 3 e di 5 stampi "FizzBuzz" al posto del numero
 const multipleOf3And5 = `FizzBuzz`
 
-let outputText;
-
-// Prima di partire a scrivere codice poniamoci qualche domanda:
-// Come faccio a sapere se un numero è divisibile per un altro? Abbiamo visto qualcosa di particolare
-// che possiamo usare?
+// - output
+const outputText = "Sei arrivato a 100!"
 
 // SVOLGIMENTO
 for (let i = 1; i <= 100; i++) {
-    console.log(i);
-    
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log(multipleOf3And5);  // verifico che il numero sia multiplo di 3 e di 5, se vero stampo 'FizzBuzz'
+    } else if (i % 3 === 0) {
+        console.log(multipleOf3); //verifico che il numero sia multiplo di 3, se vero stampo 'Fizz'
+    } else if (i % 5 === 0) { 
+        console.log(multipleOf5); //verifico che il numero sia multiplo di 5, se vero stampo 'Buzz'
+    } else {
+        console.log(i); // se non  è multiplo di 3, 5 o entrambi stampo il numero        
+    }
+
+    // quando i arriva a 100, stampo outputText
+    if (i === 100) {
+        console.log(outputText)
+    }
 }
 
-// OUTPUT
+
+
